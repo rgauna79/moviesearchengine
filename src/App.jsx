@@ -3,6 +3,9 @@ import { Movies } from "./componentes/Movies.jsx";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useMovies } from "./hooks/useMovies";
 import debounce from "just-debounce-it";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "./hooks/useTheme.js";
 
 function useSearch() {
   const [search, updateSearch] = useState("");
@@ -32,6 +35,7 @@ function useSearch() {
 
   return { search, updateSearch, error };
 }
+
 function App() {
   const [sort, setSort] = useState(false);
   const { search, updateSearch, error } = useSearch();
@@ -39,6 +43,7 @@ function App() {
     search,
     sort,
   });
+  const { theme, toggleTheme } = useTheme();
 
   const debouncedGetMovies = useCallback(
     debounce((search) => {
@@ -66,6 +71,20 @@ function App() {
   return (
     <div className="page">
       <header>
+        <div className="navbar">
+          <label className="theme-switch">
+            <input
+              type="checkbox"
+              onChange={toggleTheme}
+              checked={theme === "dark"}
+            />
+            <span className="slider">
+              <FontAwesomeIcon icon={faSun} className="icon light" />
+              <FontAwesomeIcon icon={faMoon} className="icon dark" />
+            </span>
+            <p className="themeLabel">{theme} theme</p>
+          </label>
+        </div>
         <div className="searchBox">
           <h1>Movies search engine</h1>
           <form className="searchBar" onSubmit={handleSubmit}>
@@ -98,7 +117,7 @@ function App() {
       </header>
       <main>
         <h2>Movie Catalog</h2>
-          {loading ? <p>Loading...</p> : <Movies movies={movies} />}
+        {loading ? <p>Loading...</p> : <Movies movies={movies} />}
       </main>
     </div>
   );
