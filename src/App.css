@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f7f7;
+  background-color: var(--background-alt);
+  padding: 10px 10px 0;
+  margin: 1em 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+main > h2:first-child {
+  font-weight: bold;
+}
+
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
+  grid-auto-rows: 1fr;
+  width: 100%;
+  grid-gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.movieCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 10px 10px 0;
+  margin: 1em 0;
+  border-radius: 6px;
+  overflow: hidden;
+  color: black;
+}
+
+.movieTitle{
+  display: flex;
+  align-items: center;
+ text-align: center;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  color: black;
+  min-height: 50px;
+
+}
+
+.movieYear{
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.2rem 0;
+  font-size: 1em;
+  color: black;
+}
+
+.moviePoster{
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 0;
+  padding: 0;
+  flex:1;
+  padding-bottom: 1rem;
+
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-alt);
+  padding: 10px 10px 0;
+  margin: 1em 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
