@@ -45,6 +45,7 @@ function App() {
   });
   const { theme, toggleTheme } = useTheme();
 
+  console.log(theme);
   const debouncedGetMovies = useCallback(
     debounce((search) => {
       // console.log("search", search);
