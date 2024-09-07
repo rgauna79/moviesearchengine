@@ -2,6 +2,7 @@
   "name": "movies_cat",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://rgauna79.github.io/moviesearchengine",
   "type": "module",
   "homepage": "https://rgauna79.github.io/moviesearchengine",
   "scripts": {
@@ -10,9 +11,13 @@
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "just-debounce-it": "^3.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
