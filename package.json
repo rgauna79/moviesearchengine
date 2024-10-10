@@ -4,16 +4,13 @@
   "version": "0.0.0",
   "homepage": "https://rgauna79.github.io/moviesearchengine",
   "type": "module",
-  "homepage": "https://rgauna79.github.io/moviesearchengine",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
